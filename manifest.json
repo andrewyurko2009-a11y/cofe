@@ -1,0 +1,15 @@
+{
+  "name": "Делсензо Кофе Фабрика",
+  "short_name": "Delsenzo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#3d251e",
+  "theme_color": "#3d251e",
+  "icons": [
+    {
+      "src": "https://flaticon.com",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

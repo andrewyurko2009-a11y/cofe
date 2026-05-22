@@ -1,0 +1,1012 @@
+/* ==========================================================================
+   1. Сброс стилей и базовые настройки
+   ========================================================================== */
+html {
+    scroll-behavior: smooth; /* Включает плавную прокрутку по всей странице */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #fcfbfa;
+    color: #2c1b18;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. Шапка (Header)
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #5c3d2e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #61483b;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #b85c38;
+}
+
+.cart-btn {
+    background: #5c3d2e;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cart-btn:hover {
+    background: #b85c38;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. Главный экран (Hero Section)
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 4%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 88px);
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+    background: #eed6c4;
+    color: #5c3d2e;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #2c1b18;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: #b85c38;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #61483b;
+    margin-bottom: 35px;
+}
+
+/* ==========================================================================
+   4. Кнопки и Контакты
+   ========================================================================== */
+.contacts-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.status-badge::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+.messenger-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-connect {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-phone { background: #f3ece7; color: #5c3d2e; border: 1px solid #e2d5cd; }
+.btn-phone:hover { background: #eed6c4; }
+
+.btn-tg { background: #229ED9; color: #fff; }
+.btn-tg:hover { background: #1c82b3; }
+
+.btn-wa { background: #25D366; color: #fff; }
+.btn-wa:hover { background: #1ebd58; }
+
+.btn-vk { background: #0077FF; color: #fff; }
+.btn-vk:hover { background: #0066dd; }
+
+/* ==========================================================================
+   5. Визуальный блок (Круг + Изображение)
+   ========================================================================== */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.main-circle {
+    width: 450px;
+    height: 450px;
+    background: linear-gradient(135deg, #eed6c4 0%, #fff 100%);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(92,61,46,0.1);
+}
+
+.mock-coffee-img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 50%; /* Сделает квадратную картинку круглой */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform: rotate(-5deg);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.main-circle:hover .mock-coffee-img {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* ==========================================================================
+   6. Адаптивность (Медиа-запросы)
+   ========================================================================== */
+
+/* Планшеты (до 1024px) */
+@media (max-width: 1024px) {
+    .nav-container {
+        display: none; /* Скрываем навигацию для чистоты интерфейса */
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 4%;
+        gap: 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .messenger-buttons {
+        justify-content: center;
+    }
+
+    .main-circle {
+        width: 380px;
+        height: 380px;
+    }
+}
+
+/* Мобильные телефоны (до 480px) */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .cart-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        padding: 40px 5%;
+        gap: 35px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .messenger-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-connect {
+        width: 100%;
+        justify-content: center;
+        padding: 16px;
+    }
+
+    .main-circle {
+        width: 290px;
+        height: 290px;
+    }
+}
+
+
+
+/* секция номер два */
+
+/* ==========================================================================
+   7. Секция Каталога (Темные карточки под стиль кофе)
+   ========================================================================== */
+.catalog-section {
+    padding: 80px 4%;
+    background-color: #f7f4f0; /* Легкий кремовый фон секции */
+}
+
+.catalog-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2c1b18;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Переключатели категорий */
+.catalog-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Скрытие полосы прокрутки для мобильных */
+.catalog-tabs::-webkit-scrollbar {
+    height: 0px;
+}
+
+.tab-btn {
+    background: #ffffff;
+    color: #61483b;
+    border: 1px solid #e2d5cd;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #eed6c4;
+    color: #5c3d2e;
+}
+
+.tab-btn.active {
+    background: #5c3d2e;
+    color: #ffffff;
+    border-color: #5c3d2e;
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Стилизация кофейной карточки */
+.product-card {
+    background: #3d251e; /* Глубокий темно-кофейный цвет */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(61, 37, 30, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(61, 37, 30, 0.3);
+}
+
+/* Зона картинки */
+.product-img-wrapper {
+    background: #4a3129; /* Слегка контрастный фон для пачки */
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-img {
+    max-height: 220px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.06);
+}
+
+/* Описание и текст */
+.product-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff; /* Белый текст на темном */
+    margin-bottom: 12px;
+    line-height: 1.4;
+    min-height: 48px; /* Чтобы карточки были в один уровень */
+}
+
+.product-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #eed6c4; /* Нежный карамельный цвет для цены */
+    margin-bottom: 15px;
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: #d1c2bd; /* Приглушенный светлый тон для читаемости */
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1; /* Прижимает кнопку к низу */
+}
+
+/* Кнопка купить */
+.btn-add-cart {
+    background: #b85c38; /* Яркий акцентный терракотовый цвет */
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.btn-add-cart:hover {
+    background: #cd6942;
+}
+
+.btn-add-cart:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   8. Адаптивность для Каталога
+   ========================================================================== */
+
+/* Большие планшеты и ноутбуки */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Планшеты вертикальные */
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 550px) {
+    .catalog-section {
+        padding: 50px 5%;
+    }
+    .products-grid {
+        grid-template-columns: 1fr; /* На смартфонах карточки встают в одну красивую колонку */
+        gap: 25px;
+    }
+    .product-name {
+        min-height: auto;
+    }
+}
+
+
+
+---
+
+### 🎨 2. Дополнение в CSS (`style.css`)
+Добавь эти стили в конец своего файла, чтобы оформить блок кнопок страниц:
+
+```css
+/* ==========================================================================
+   9. Круглая пагинация (Кнопки страниц)
+   ========================================================================== */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    width: 100%;       /* Занимает всю ширину */
+    flex-direction: row !important; /* Строго в строчку на всех устройствах */
+    flex-wrap: nowrap; /* Запрещает кнопкам переноситься на новую строку */
+}
+
+
+.pag-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%; /* Делает кнопки идеально круглыми */
+    border: 1px solid #e2d5cd;
+    background: #ffffff;
+    color: #5c3d2e;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Эффект наведения на кругляшки */
+.pag-btn:hover {
+    background: #eed6c4;
+    color: #5c3d2e;
+    border-color: #eed6c4;
+    transform: scale(1.08);
+}
+
+/* Активная выбранная страница (Темно-кофейная) */
+.pag-btn.active {
+    background: #3d251e;
+    color: #ffffff;
+    border-color: #3d251e;
+    box-shadow: 0 5px 15px rgba(61, 37, 30, 0.3);
+}
+
+/* Стили для стрелочек "Вперед/Назад" */
+.pag-btn.prev-next {
+    background: #f3ece7;
+    font-size: 1.1rem;
+}
+
+/* Троеточие */
+.pag-dots {
+    color: #a8948b;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0 5px;
+}
+
+@media (max-width: 480px) {
+    .pagination-container {
+        gap: 8px;
+        margin-top: 35px;
+    }
+    .pag-btn {
+        width: 40px;  /* Чуть уменьшаем размер, чтобы 100% влезли в экран */
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ==========================================================================
+   10. Секция Фотогалереи (Премиум мозаика)
+   ========================================================================== */
+.photos-section {
+    padding: 80px 4%;
+    background-color: #fcfbfa; /* Чистый светлый фон для контраста с каталогом */
+}
+
+.photos-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Сетка для картинок: 3 колонки на ПК */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Оболочка для каждого фото */
+.photo-item {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* Делает все фотографии идеально квадратными */
+    box-shadow: 0 8px 24px rgba(92, 61, 46, 0.08);
+    cursor: pointer;
+}
+
+/* Сама картинка */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение заполняет квадрат без деформации */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Эффект затемнения при наведении */
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 37, 30, 0.4); /* Фирменный кофейный оверлей */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.photo-overlay span {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 2px solid #ffffff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    transform: translateY(15px);
+    transition: transform 0.4s ease;
+}
+
+/* Анимация при наведении */
+.photo-item:hover .gallery-img {
+    transform: scale(1.08); /* Картинка плавно увеличивается */
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1; /* Проявляется темный фон */
+}
+
+.photo-item:hover .photo-overlay span {
+    transform: translateY(0); /* Кнопка красиво приподнимается */
+}
+
+/* ==========================================================================
+   Адаптивность для Галереи
+   ========================================================================== */
+
+/* Планшеты */
+@media (max-width: 900px) {
+    .photos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+        gap: 20px;
+    }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 480px) {
+    .photos-section {
+        padding: 50px 5%;
+    }
+    .photos-grid {
+        grid-template-columns: 1fr; /* 1 колонка на смартфонах */
+        gap: 15px;
+    }
+}
+
+
+/* ==========================================================================
+   11. Секция О Нас
+   ========================================================================== */
+.about-section {
+    padding: 80px 4%;
+    background-color: #f7f4f0;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-content-wrapper {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.about-main-text {
+    flex: 1.2;
+}
+
+.about-main-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #61483b;
+    margin-bottom: 20px;
+}
+
+.about-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(92, 61, 46, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+}
+
+.feature-card h4 {
+    font-size: 1.1rem;
+    color: #3d251e;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #8c756c;
+}
+
+/* ==========================================================================
+   12. Секция Контакты и Футер
+   ========================================================================== */
+.contacts-section {
+    padding: 100px 4% 0 4%;
+    background: linear-gradient(rgba(61, 37, 30, 0.85), rgba(44, 27, 24, 0.95)),
+                url('https://unsplash.com') center/cover no-repeat;
+    position: relative;
+}
+
+.contacts-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: class;
+}
+
+.contacts-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.text-white {
+    color: #ffffff !important;
+    margin-bottom: 10px;
+}
+
+.contacts-sub {
+    color: #eed6c4;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.contact-item-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    transition: background 0.3s ease;
+}
+
+.contact-item-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.c-icon { font-size: 1.5rem; }
+
+.contact-item-link div span {
+    display: block;
+    font-size: 0.8rem;
+    color: #d1c2bd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-item-link div strong {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Сетка соцсетей */
+.contacts-social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.soc-link {
+    padding: 14px;
+    text-align: center;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.soc-link:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.tg-bg { background: #229ED9; }
+.wa-bg { background: #25D366; }
+.vk-bg { background: #0077FF; }
+
+/* Подвал (Footer) */
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #a8948b;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Адаптивность под планшеты и мобилки
+   ========================================================================== */
+@media (max-width: 992px) {
+    .about-content-wrapper {
+        flex-direction: column;
+    }
+    .about-features {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .about-main-text p {
+        font-size: 1rem;
+    }
+    .contacts-card {
+        padding: 25px;
+    }
+    .contacts-social-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================================
+   13. Баннер установки PWA приложения
+   ========================================================================== */
+.pwa-banner {
+    background: #3d251e;
+    color: #ffffff;
+    padding: 15px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid #b85c38;
+    position: relative;
+    z-index: 999;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.pwa-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pwa-icon {
+    font-size: 1.8rem;
+}
+
+.pwa-text strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 3px;
+    color: #eed6c4;
+}
+
+.pwa-text p {
+    font-size: 0.85rem;
+    color: #d1c2bd;
+}
+
+.pwa-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pwa-btn-install {
+    background: #b85c38;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.pwa-btn-install:hover {
+    background: #cd6942;
+}
+
+.pwa-btn-close {
+    background: transparent;
+    color: #a8948b;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.pwa-btn-close:hover {
+    color: #ffffff;
+}
+
+/* Адаптация баннера под мобилки */
+@media (max-width: 600px) {
+    .pwa-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 15px;
+    }
+    .pwa-banner-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .pwa-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+    .pwa-btn-install {
+        width: 80%;
+    }
+}

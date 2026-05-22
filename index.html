@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Производство кофе Делсензо</title>
+    <!-- Подключаем современный шрифт Montserrat -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <!-- Подключаем внешний файл стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <!-- Всплывающий баннер установки PWA -->
+    <div id="pwa-banner" class="pwa-banner" style="display: none;">
+        <div class="pwa-banner-content">
+            <span class="pwa-icon">📱</span>
+            <div class="pwa-text">
+                <strong>Установите наше приложение!</strong>
+                <p>Смотрите каталог оборудования и заказывайте кофе быстрее.</p>
+            </div>
+        </div>
+        <div class="pwa-buttons">
+            <button id="btn-pwa-install" class="pwa-btn-install">Установить</button>
+            <button id="btn-pwa-close" class="pwa-btn-close">✕</button>
+        </div>
+    </div>
+
+
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="logo">Делсензо</div>
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="cart-btn">
+            <span class="cart-icon">🛒</span> Корзина
+        </button>
+    </header>
+
+    <!-- Главный экран (Hero Section) -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">Производственное предприятие</span>
+                <h1 class="hero-title">Производство кофе <br><span>Делсензо</span></h1>
+                <p class="hero-text">
+                    Производим и продаём самый вкусный кофе! Действуют хорошие скидки!
+                    Работаем с любыми объёмами и по всей России. На сайте представлены
+                    розничные цены для заказов до 10 кг.
+                </p>
+
+                <!-- Блок контактов -->
+                <div class="contacts-wrapper">
+                    <div class="status-badge">Сейчас открыто</div>
+                    <div class="messenger-buttons">
+                        <a href="tel:+79000000000" class="btn-connect btn-phone">Показать номер</a>
+                        <a href="https://t.me" target="_blank" class="btn-connect btn-tg">Telegram</a>
+                        <a href="https://wa.me" target="_blank" class="btn-connect btn-wa">WhatsApp</a>
+                        <a href="https://vk.com" target="_blank" class="btn-connect btn-vk">ВКонтакте</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая графическая часть для вау-эффекта в клипе -->
+            <div class="hero-image-container">
+                <div class="main-circle">
+                    <!-- Замените ссылку ниже на путь к вашей реальной пачке кофе -->
+                    <img src="https://static.vecteezy.com/system/resources/previews/042/655/043/non_2x/ai-generated-espresso-coffee-in-white-cup-top-view-free-png.png"
+                         alt="Кофе Делсензо" class="mock-coffee-img">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+       <!-- Секция Каталога -->
+    <section id="catalog" class="catalog-section">
+        <div class="catalog-container">
+            <h2 class="section-title">Каталог продукции</h2>
+
+            <!-- Табы / Категории -->
+            <div class="catalog-tabs">
+                <button class="tab-btn active">Все</button>
+                <button class="tab-btn">Кофе</button>
+                <button class="tab-btn">ПОДАРКИ</button>
+                <button class="tab-btn">УСЛУГА</button>
+            </div>
+
+            <!-- Сетка товаров (Всего 12 карточек под темный стиль) -->
+            <div class="products-grid">
+
+                <!-- 1 -->
+                <article class="product-card" data-category="coffee">
+
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/1358381/2a0000019e2696e8b49e043ccce50c31eb9b/XXL"
+                             alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах Delsenzo Lungo 1 кг</h3>
+                        <p class="product-price">1 725 ₽</p>
+                        <p class="product-desc">Идеален для приготовления американо с мягким вкусом и ароматом. Аромат с бархатистым вкусом и легкой присущей кофе...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="product-card" data-category="coffee">
+
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/1540730/2a0000019e2693279d56bb3c3762feb7c418/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зёрнах 1 кг арабика Бразилия</h3>
+                        <p class="product-price">1 785 ₽</p>
+                        <p class="product-desc">Легкая арабика, популярен за счет простого и понятного вкуса арабики, легкого и не горького. Отлично сочетается с десертами...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019d86e1e71ae42fed2aec6d4d2429/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах 0,5 кг арабика/робуста (50/50)</h3>
+                        <p class="product-price">980 ₽</p>
+                        <p class="product-desc">Delsenzo Organic Silver Для тех, кто любит эспрессо, мы создали органичный купаж. Это бодрящий и свежий напиток, в два жгучих глотка...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019d86e1e71ae42fed2aec6d4d2429/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах 0,5 кг арабика/робуста (80/20)</h3>
+                        <p class="product-price">1 015 ₽</p>
+                        <p class="product-desc">Delsenzo Organic Gold Идеально подойдет для тех, кто любит пить кофе с молоком. Вы ощутите кофейный аромат даже через густую...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 5 (Новая) -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/3912342/2a0000019d86dc35c6dc1e101e9a4259bdeb/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах 1 кг арабика/робуста (60/40)</h3>
+                        <p class="product-price">1 655 ₽</p>
+                        <p class="product-desc">DelsenzoTWO Идеален для приготовления всех рецептов кофе. Крепкий кофе с характерным ароматом и богатым насыщенным...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 6 (Новая) -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/1643978/2a0000019d86b9f98b9436d726eb0aa40657/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах 1 кг арабика/робуста (60/40)</h3>
+                        <p class="product-price">1 655 ₽</p>
+                        <p class="product-desc">DelsenzoONE Идеален для приготовления всех рецептов кофе. Нежный классический кофе с мягким гармоничным вкусом...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 7 (Новая - Подарки) -->
+                <article class="product-card" data-category="gifts">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/5632604/2a0000018617998a2a7ad9a5d33f405055f6/XXL" alt="Подарки" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Корпоративные подарки для компаний</h3>
+                        <p class="product-price">298 ₽</p>
+                        <p class="product-desc">Закажите подарки с нанесением лого вашей компании на подарочную упаковку или кофейную пачку! Кофе любим везде и всюду! Ваши...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 8 (Новая - Услуга) -->
+                <article class="product-card" data-category="services">
+
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/5280674/2a00000186178f432b28b836009443d179cb/XXL" alt="Брендирование" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Брендирование готовой продукции</h3>
+                        <p class="product-price">3 ₽</p>
+                        <p class="product-desc">Наше производство предлагает выпуск продукции под торговой маркой заказчика! Вы можете заказывать обжарку кофе...</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 9 (Новая) -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/5399152/2a0000018602dbb3fd14bde3bc3d36f6e382/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах Delsenzo Premium 1 кг</h3>
+                        <p class="product-price">1 950 ₽</p>
+                        <p class="product-desc">Отборная стопроцентная арабика высокогорной обжарки. Плотный шоколадный профиль с нотками спелой лесной черники.</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 10 (Новая) -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/1540730/2a0000019e2693279d56bb3c3762feb7c418/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах Espresso Professional 1 кг</h3>
+                        <p class="product-price">1 420 ₽</p>
+                        <p class="product-desc">Сбалансированная смесь для кофейных автоматов и баров. Густая стойкая пенка крема, высокая плотность и глубокий бодрящий вкус.</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 11 (Новая) -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/5399152/2a0000018602dbb3fd14bde3bc3d36f6e382/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Кофе в зернах Delsenzo Decaf (Без кофеина) 0.5 кг</h3>
+                        <p class="product-price">1 150 ₽</p>
+                        <p class="product-desc">Натуральный кофе, прошедший бережный процесс декофеинизации. Сохраняет полный спектр аромата классического кофе.</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                <!-- 12 (Новая) -->
+                <article class="product-card" data-category="coffee">
+                    <div class="product-img-wrapper">
+                        <img src="https://avatars.mds.yandex.net/get-sprav-products/5632604/2a0000018602d1c20dd667969afdb5fa4d42/XXL" alt="Кофе" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Набор кофейных пробников Delsenzo Набор</h3>
+                        <p class="product-price">650 ₽</p>
+                        <p class="product-desc">Натуральный кофе, прошедший бережный процесс декофеинизации. Сохраняет полный спектр аромата классического кофе.</p>
+                        <button class="btn-add-cart">В корзину</button>
+                    </div>
+                </article>
+
+                  <!-- Блок круглой пагинации -->
+            <div class="pagination-container">
+                <button class="pag-btn prev-next" id="prev-page">←</button>
+                <button class="pag-btn active" data-page="1">1</button>
+                <button class="pag-btn" data-page="2">2</button>
+                <button class="pag-btn prev-next" id="next-page">→</button>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Секция Фотогалереи -->
+    <section id="photos" class="photos-section">
+        <div class="photos-container">
+            <h2 class="section-title">Галерея</h2>
+
+            <div class="photos-grid">
+                <!-- Фото 1 (Пакеты и этикетки) -->
+                <div class="photo-item">
+                    <img src="https://avatars.mds.yandex.net/get-altay/6272620/2a00000186178009eac5939fc0e9c821f231/XL" alt="Производство кофе" class="gallery-img">
+                    <div class="photo-overlay"><span>Просмотр</span></div>
+                </div>
+
+                <!-- Фото 2 (Подарочные наборы) -->
+                <div class="photo-item">
+                    <img src="https://avatars.mds.yandex.net/get-altay/1032555/2a00000186177e3e74251b53df9e409db355/XL" alt="Подарочные наборы кофе" class="gallery-img">
+                    <div class="photo-overlay"><span>Просмотр</span></div>
+                </div>
+
+                <!-- Фото 3 (Пачка в руке) -->
+                <div class="photo-item">
+                    <img src="https://avatars.mds.yandex.net/get-altay/1363707/2a0000018602f314df8f329455d9ea5a7c7b/XL" alt="Кофе Делсензо" class="gallery-img">
+                    <div class="photo-overlay"><span>Просмотр</span></div>
+                </div>
+
+                <!-- Фото 4 (Коробочка с крафтом) -->
+                <div class="photo-item">
+                    <img src="https://avatars.mds.yandex.net/get-altay/934739/2a00000186177e6e104605911035b5265c89/XL" alt="Крафтовая упаковка" class="gallery-img">
+                    <div class="photo-overlay"><span>Просмотр</span></div>
+                </div>
+
+                <!-- Фото 5 (Зерна кофе) -->
+                <div class="photo-item">
+                    <img src="https://avatars.mds.yandex.net/get-altay/1363250/2a00000186177f6d5bd0101a6c09a7f72b82/XL" alt="Кофейные зерна" class="gallery-img">
+                    <div class="photo-overlay"><span>Просмотр</span></div>
+                </div>
+
+                <!-- Фото 6 (Процесс обжарки) -->
+                <div class="photo-item">
+                    <img src="https://avatars.mds.yandex.net/get-altay/1018126/2a00000186177f6d29e5cc127dcc90c084a8/XL" alt="Обжарка кофе" class="gallery-img">
+                    <div class="photo-overlay"><span>Просмотр</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <!-- Секция О нас -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="section-title">О нас</h2>
+            <div class="about-content-wrapper">
+                <div class="about-main-text">
+                    <p>Наша компания работает с 2009 года. Мы находимся в Санкт-Петербурге. Отправляем заказы по всей России. Доставка по нашему городу осуществляется бесплатно при заказе 3 кг любого кофе из нашего ассортимента.</p>
+                    <p>Оптовые межгородские заказы мы бесплатно доставляем в любую транспортную компанию и оформляем отправку до заказчика. Межгородскую перевозку оплачивает получатель (иные условия оговариваются отдельно).</p>
+                    <p>Подберём подходящий кофе, проконсультируем, отправим образцы. Вам будет комфортно сотрудничать с нами!</p>
+                </div>
+
+                <!-- Карточки преимуществ для динамики в видео -->
+                <div class="about-features">
+                    <div class="feature-card">
+                        <span class="feature-icon">⏳</span>
+                        <h4>С 2009 года</h4>
+                        <p>Более 15 лет безупречной обжарки</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🚚</span>
+                        <h4>Бесплатная доставка</h4>
+                        <p>При заказе от 3 кг по Санкт-Петербургу</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">📦</span>
+                        <h4>По всей РФ</h4>
+                        <p>Доставка до любой ТК за наш счет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Контакты + Подвал -->
+    <section id="contacts" class="contacts-section">
+        <div class="contacts-container">
+            <div class="contacts-card">
+                <h2 class="section-title text-white">Контакты</h2>
+                <p class="contacts-sub">Производство кофе Делсензо оказывает услуги в России, в Санкт-Петербурге</p>
+
+                <div class="contacts-info-list">
+                    <a href="tel:+79050000000" class="contact-item-link">
+                        <span class="c-icon">📞</span>
+                        <div>
+                            <span>Телефон</span>
+                            <strong>+7 (905) XXX-XX-XX</strong>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contacts-social-grid">
+                    <a href="https://t.me" target="_blank" class="soc-link tg-bg">Telegram</a>
+                    <a href="https://wa.me" target="_blank" class="soc-link wa-bg">WhatsApp</a>
+                    <a href="https://vk.com" target="_blank" class="soc-link vk-bg">ВКонтакте</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фирменный подвал -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>© 2026 Производство кофе Делсензо. Все права защищены.</p>
+                <p>Разработка и адаптация интерфейса — Версия ПОСЛЕ</p>
+            </div>
+        </footer>
+    </section>
+
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
